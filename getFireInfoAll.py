@@ -5,8 +5,8 @@ import os
 from getpass import getpass
 
 
-#USER = input("Enter your username: ")
-#PASS = getpass()
+USER = input("Enter your username: ")
+PASS = getpass()
 
 
 FORTIGATES = [
@@ -47,8 +47,7 @@ COUNT = 2
 for fire in FORTIGATES:
     print("Starting " + fire['name'])
     urlogin = "https://" + fire['mgmtIP'] + "/logincheck"
-    #payload = "username=" + USER + "&secretkey=" + PASS
-    payload = "username=wclark&secretkey=XinZ%m#E*Mt4FW"
+    payload = "username=" + USER + "&secretkey=" + PASS
     headers = {'Content-Type': 'application/json'}
     requests.packages.urllib3.disable_warnings()
     response = requests.request("POST", urlogin, headers=headers, data=payload, verify=False)
